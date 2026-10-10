@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#173b32">
+  <meta name="description" content="Reliable commercial and residential cleaning and laundry solutions from Paloh Unique Project & Trading CC.">
+  <title>Palomah's Laundry Cleaning Service</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+  :root {
+    color-scheme: dark;
+    --white: #ffffff;
+    --gold: #d4af37;
+    --black: #000000;
+    --forest: #142d28;
+    --forest-deep: var(--black);
+    --moss: var(--gold);
+    --lime: var(--gold);
+    --paper: #0b0b0b;
+    --ink: var(--white);
+    --muted: rgba(255, 255, 255, 0.72);
+    --line: rgba(255, 255, 255, 0.14);
+    --display: "Manrope", "Trebuchet MS", sans-serif;
+    --body: "DM Sans", "Trebuchet MS", sans-serif;
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; color: var(--ink); background: var(--paper); font-family: var(--body); font-size: 16px; line-height: 1.55; }
+  a { color: inherit; text-decoration: none; }
+  button, input, select, textarea { font: inherit; }
+  button, a { -webkit-tap-highlight-color: transparent; }
+  img { display: block; max-width: 100%; }
+  .wrap { width: min(1240px, calc(100% - 64px)); margin-inline: auto; }
+  .site-header { position: absolute; z-index: 5; inset: 0 0 auto; color: var(--white); }
+  .nav { height: 88px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgb(255 255 255 / 24%); }
+  .brand { display: inline-flex; align-items: center; gap: 12px; min-width: 176px; }
+  .brand img { width: 78px; height: 54px; object-fit: cover; object-position: center; }
+  .brand span { max-width: 118px; font-family: var(--display); font-size: 11px; line-height: 1.25; font-weight: 700; }
+  .nav-links { display: flex; align-items: center; gap: 35px; font-size: 13px; font-weight: 500; }
+  .nav-links a:not(.nav-cta) { opacity: .84; transition: opacity .2s; }
+  .nav-links a:not(.nav-cta):hover { opacity: 1; }
+  .nav-cta { min-height: 42px; padding: 10px 17px; display: inline-flex; align-items: center; gap: 10px; border: 1px solid rgb(255 255 255 / 58%); border-radius: 2px; }
+  .nav-cta span { color: var(--lime); font-size: 17px; line-height: 1; }
+  .menu-toggle { display: none; width: 44px; height: 44px; color: var(--white); border: 1px solid rgb(255 255 255 / 45%); border-radius: 2px; background: transparent; cursor: pointer; }
+
+  .site-footer { padding: 30px 0; color: rgb(255 255 255 / 65%); background: #050505; font-size: 11px; }
+    .footer-row { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .footer-name { color: var(--white); font-weight: 700; }
+    .footer-links { display: flex; gap: 22px; }
+    .footer-links a:hover { color: var(--white); }
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity .65s ease, transform .65s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    @keyframes rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes settle { from { transform: scale(1.06); } to { transform: scale(1.015); } }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; } .reveal { opacity: 1; transform: none; } }
+
+  .item-card {
+    width: min(1180px, calc(100% - 40px));
+    margin: 130px auto 64px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 270px), 1fr));
+    gap: 24px;
+  }
+  .order-item {
+    overflow: hidden;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: rgba(17, 17, 17, 0.9);
+    box-shadow: 0 8px 24px rgb(0 0 0 / 20%);
+    transition: transform .2s ease, box-shadow .2s ease;
+  }
+  .order-item:hover { transform: translateY(-4px); box-shadow: 0 14px 30px rgb(0 0 0 / 28%); }
+  .order-item img { width: 100%; height: 230px; object-fit: cover; }
+  .order-details { padding: 20px; }
+  .order-item h1 { margin: 0 0 10px; color: var(--white); font-family: var(--display); font-size: 19px; line-height: 1.35; }
+  .order-item p { margin: 0 0 18px; color: rgba(255, 255, 255, 0.72); }
+  .order-price { color: var(--gold) !important; font-size: 18px; font-weight: 700; }
+  .order-controls { display: flex; align-items: end; gap: 12px; }
+  .quantity-field { flex: 1; color: rgba(255, 255, 255, 0.76); font-size: 12px; font-weight: 600; }
+  .quantity-field input { display: block; width: 100%; height: 44px; margin-top: 5px; padding: 8px 10px; border: 1px solid var(--line); border-radius: 5px; background: #0c0c0c; color: var(--white); }
+  .whatsapp-order { min-height: 44px; display: inline-flex; align-items: center; justify-content: center; padding: 9px 13px; border-radius: 5px; color: var(--black); background: var(--gold); font-size: 13px; font-weight: 700; white-space: nowrap; }
+  .whatsapp-order:hover { background: var(--white); }
+  .whatsapp-order:focus-visible, .quantity-field input:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+  @media (max-width: 760px) { .item-card { margin-top: 100px; } }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; } }
+
+    @media (max-width: 760px) {
+      .nav { height: 72px; }
+      .brand { min-width: 0; gap: 8px; }
+      .brand img { width: 65px; height: 45px; }
+      .brand span { max-width: 103px; font-size: 10px; }
+      .menu-toggle { display: inline-grid; place-items: center; }
+      .menu-toggle svg { width: 19px; height: 19px; }
+      .nav-links { position: absolute; top: 72px; right: 20px; left: 20px; display: none; align-items: stretch; gap: 0; padding: 10px 18px; border: 1px solid rgb(255 255 255 / 19%); background: var(--forest-deep); }
+      .nav-links.open { display: flex; flex-direction: column; }
+      .nav-links > a:not(.nav-cta) { padding: 13px 0; border-bottom: 1px solid rgb(255 255 255 / 14%); }
+      .nav-cta { justify-content: center; margin: 12px 0 4px; }
+      .footer-row { align-items: flex-start; flex-direction: column; }
+    }
+    @media (max-width: 390px) {
+      .brand span { max-width: 93px; font-size: 9px; }
+      .footer-links { flex-wrap: wrap; gap: 12px 18px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav wrap" aria-label="Main navigation">
+      <a class="brand" href="index.html" aria-label="Paloh home">
+        <img src="Palog%20Logo%202.jpg">
+      </a>
+      <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="nav-links">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+      <div class="nav-links" id="nav-links">
+        <a href="index.html#services">Services</a>
+        <a href="index.html#about">About Paloh</a>
+        <a href="index.html#approach">Our approach</a>
+        <a class="nav-cta" href="index.html#contact">Contact <span aria-hidden="true">↗</span></a>
+      </div>
+    </nav>
+  </header>
+  <footer class="site-footer">
+
+  <section class="item-card" aria-label="Items available to order">
+    <article class="order-item">
+      <img src="Images/1.jpeg" alt="Freshly cleaned clothes">
+      <div class="order-details">
+        <h1>Clean Clothes Everytime</h1>
+        <p class="order-price">$350.00</p>
+        <div class="order-controls">
+          <label class="quantity-field">Quantity<input type="number" min="1" value="1" inputmode="numeric" aria-label="Quantity of Clean Clothes Everytime"></label>
+          <a class="whatsapp-order" href="https://wa.me/?text=Hello%2C%20I%27d%20like%20to%20order%201%20x%20Clean%20Clothes%20Everytime%20at%20%24350.00." target="_blank" rel="noopener noreferrer" data-product="Clean Clothes Everytime" data-price="$350.00">Order on WhatsApp</a>
+        </div>
+      </div>
+    </article>
+    <article class="order-item">
+      <img src="Images/10.jpeg" alt="Washing basket available for rent">
+      <div class="order-details">
+        <h1>Rent a Washing Basket</h1>
+        <p class="order-price">$350.00</p>
+        <div class="order-controls">
+          <label class="quantity-field">Quantity<input type="number" min="1" value="1" inputmode="numeric" aria-label="Quantity of Washing Baskets"></label>
+          <a class="whatsapp-order" href="https://wa.me/?text=Hello%2C%20I%27d%20like%20to%20order%201%20x%20Washing%20Basket%20Rental%20at%20%24350.00." target="_blank" rel="noopener noreferrer" data-product="Rent a Washing Basket" data-price="$350.00">Order on WhatsApp</a>
+        </div>
+      </div>
+    </article>
+    <article class="order-item">
+      <img src="Images/3.jpeg" alt="Paloh delivery service">
+      <div class="order-details">
+        <h1>We Deliver a Quality Service</h1>
+        <p class="order-price">Delivery: $50.00</p>
+        <div class="order-controls">
+          <label class="quantity-field">Quantity<input type="number" min="1" value="1" inputmode="numeric" aria-label="Number of deliveries"></label>
+          <a class="whatsapp-order" href="https://wa.me/?text=Hello%2C%20I%27d%20like%20to%20order%201%20delivery%20at%20%2450.00." target="_blank" rel="noopener noreferrer" data-product="We Deliver a Quality Service" data-price="$50.00">Order on WhatsApp</a>
+        </div>
+      </div>
+    </article>
+  </section>
+    <div class="wrap footer-row">
+      <span class="footer-name">Paloh Unique Project &amp; Trading CC</span>
+      <span>Cleaning &amp; laundry solutions, delivered with care.</span>
+      <div class="footer-links"><a href="index.html#services">Services</a><a href="index.html#about">About</a><a href="index.html#contact">Contact: +264 81 689 2529</a></div>
+      <span>© <span id="year"></span> Paloh</span>
+    </div>
+  </footer>
+  <script>
+    const menuButton = document.querySelector('.menu-toggle');
+    const navigation = document.querySelector('.nav-links');
+
+    menuButton.addEventListener('click', () => {
+      const isOpen = menuButton.getAttribute('aria-expanded') === 'true';
+      menuButton.setAttribute('aria-expanded', String(!isOpen));
+      menuButton.setAttribute('aria-label', isOpen ? 'Open navigation' : 'Close navigation');
+      navigation.classList.toggle('open', !isOpen);
+    });
+
+    navigation.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => {
+      menuButton.setAttribute('aria-expanded', 'false');
+      menuButton.setAttribute('aria-label', 'Open navigation');
+      navigation.classList.remove('open');
+    }));
+
+    document.querySelectorAll('.whatsapp-order').forEach((link) => {
+      link.addEventListener('click', (event) => {
+        const quantityInput = link.closest('.order-controls').querySelector('input');
+        const quantity = Math.max(1, parseInt(quantityInput.value, 10) || 1);
+        quantityInput.value = quantity;
+        const product = link.dataset.product;
+        const itemName = product === 'We Deliver a Quality Service' ? 'delivery' : product;
+        const message = `Hello, I'd like to order ${quantity} x ${itemName} at ${link.dataset.price} each.`;
+        link.href = `https://wa.me/?text=${encodeURIComponent(message)}`;
+        if (!link.href) event.preventDefault();
+      });
+    });
+
+    document.querySelector('#year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
